@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prova CPM</title>
+    <style>
+        /* VARIÁVEIS DE CORES */
+        :root {
+            --cor-principal: #142B49;
+            --cor-secundaria: #C5A15B;
+            --cor-destaque: #D6B76A;
+
+            --cor-fundo: #F4F5F7;
+            --cor-card: #FFFFFF;
+
+            --cor-texto: #252A32;
+            --cor-texto-claro: #FFFFFF;
+
+            --cor-borda: #D7DCE3;
+
+            --sombra: 0 4px 15px rgba(20, 43, 73, 0.15);
+        }
+
+        /* CONFIGURAÇÃO GERAL */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        /* MENU */
+        nav {
+            background-color: var(--cor-secundaria);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .introducao {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* FORMULÁRIO */
+        form {
+            background-color: var(--cor-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+        }
+
+        fieldset {
+            border: 2px solid var(--cor-destaque);
+            border-radius: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+        }
+
+        legend {
+            color: var(--cor-principal);
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid var(--cor-secundaria);
+        }
+
+        /* RADIO E CHECKBOX */
+        .opcoes label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+
+        .opcoes input {
+            width: auto;
+        }
+
+        /* RANGE */
+        input[type="range"] {
+            cursor: pointer;
+        }
+
+        /* COLOR */
+        input[type="color"] {
+            width: 80px;
+            height: 45px;
+            padding: 2px;
+        }
+
+        /* BOTÕES */
+        .botoes {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .botoes input {
+            width: auto;
+            cursor: pointer;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: var(--cor-principal);
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #E6E2D9;
+            color: var(--cor-texto);
+        }
+
+        input[type="button"] {
+            background-color: var(--cor-secundaria);
+            color: white;
+        }
+
+        .botoes input:hover {
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--cor-principal);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header id="inicio">
+        <h1>Prova CPM</h1>
+        <p>Faça sua inscrição para nossa prova</p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#formulario">Formulário</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <section class="introducao">
+            <h2>Inscrição prova CPM</h2>
+
+            <p>
+                Preencha o formulário para a inscrição de nossa prova e planeje seu tempo de estudo
+            </p>
+        </section>
+
+        <section id="formulario">
+
+            <form>
+
+                <!-- DADOS PESSOAIS -->
+                <fieldset>
+
+                    <legend>Dados pessoais</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo:</label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="idade">Idade:</label>
+
+                        <input
+                            type="number"
+                            id="idade"
+                            name="idade"
+                            min="14"
+                            max="100"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemplo@email.com"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone:</label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(00) 00000-0000"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="site">Site pessoal:</label>
+
+                        <input
+                            type="url"
+                            id="site"
+                            name="site"
+                            placeholder="https://meusite.com"
+                        >
+                    </div>
+
+                </fieldset>
+
+                <!-- DATA E HORÁRIO -->
+                <fieldset>
+
+                    <legend>Organização dos estudos</legend>
+
+                    <div class="campo">
+                        <label for="data">Data para começar a estudar:</label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="horario">Horário de estudo:</label>
+
+                        <input
+                            type="time"
+                            id="horario"
+                            name="horario"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="dataHorario">Data e horário de estudo:</label>
+
+                        <input
+                            type="datetime-local"
+                            id="dataHorario"
+                            name="dataHorario"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="mes">Mês de preparação:</label>
+
+                        <input
+                            type="month"
+                            id="mes"
+                            name="mes"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="semana">Semana de revisão:</label>
+
+                        <input
+                            type="week"
+                            id="semana"
+                            name="semana"
+                        >
+                    </div>
+
+                </fieldset>
+
+                <!-- ESCOLHAS -->
+                <fieldset>
+
+                    <legend>Minhas escolhas</legend>
+
+                    <div class="campo">
+
+                        <label>Turno de estudo:</label>
+
+                        <div class="opcoes">
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="manha"
+                                >
+                                Manhã
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="tarde"
+                                >
+                                Tarde
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="turno"
+                                    value="noite"
+                                >
+                                Noite
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Matérias para revisar:</label>
+
+                        <div class="opcoes">
+
+                            <label>
+                                <input type="checkbox" name="portugues">
+                                Português
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="matematica">
+                                Matemática
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="historia">
+                                História
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="curso">Qual turno você gostaria de estudar no CPM?</label>
+
+                        <select id="curso" name="curso">
+
+                            <option value="">Selecione</option>
+
+                            <option value="administracao">Manhã</option>
+
+                            <option value="contabeis">Tarde </option>
+
+                            <option value="computacao">Noite</option>
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- OUTROS CAMPOS -->
+                <fieldset>
+
+                    <legend>Outros campos</legend>
+
+                    <div class="campo">
+
+                        <label for="pesquisa">Pesquisar matéria:</label>
+
+                        <input
+                            type="search"
+                            id="pesquisa"
+                            name="pesquisa"
+                            placeholder="Pesquisar..."
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="arquivo">Selecione seu cronograma de estudos:</label>
+
+                        <input
+                            type="file"
+                            id="arquivo"
+                            name="arquivo"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+
+                    <div class="campo">
+
+
+                        <label for="nivel">Nível de confiança para a prova:</label>
+
+                        <input
+                            type="range"
+                            id="nivel"
+                            name="nivel"
+                            min="0"
+                            max="10"
+                            value="5"
+                        >
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="mensagem">Meus objetivos para o CPM:<label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="5"
+                            placeholder="Escreva seus objetivos..."
+                        ></textarea>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        name="codigo"
+                        value="UEL001"
+                    >
+
+                </fieldset>
+
+                <!-- CONFIRMAÇÃO -->
+                <fieldset>
+
+                    <legend>Confirmação</legend>
+
+                    <div class="opcoes">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="termos"
+                                required
+                            >
+                            Confirmo que as informações estão corretas.
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- BOTÕES -->
+                <div class="botoes">
+
+                    <input
+                        type="submit"
+                        value="Enviar"
+                    >
+
+                    <input
+                        type="reset"
+                        value="Limpar"
+                    >
+
+                    <input
+                        type="button"
+                        value="Clique aqui"
+                        onclick="mostrarMensagem()"
+                    >
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer id="contato">
+
+        <p>Vestibular UEL</p>
+
+        <p>Trabalho escolar de HTML e CSS</p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function mostrarMensagem() {
+
+            alert("Você clicou no botão!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
